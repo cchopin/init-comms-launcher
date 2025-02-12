@@ -1,0 +1,23 @@
+# Node.js dependencies
+node_modules/
+
+# Build output for the frontend (Vite)
+dist/
+
+# Tauri build artifacts
+src-tauri/target/
+
+# Rust build artifacts (au cas où vous auriez d'autres cibles)
+target/
+
+# Logs and temporary files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Environment files (si vous ne souhaitez pas les partager)
+.env

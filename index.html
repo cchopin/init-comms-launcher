@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Initiative Comms</title>
+  <style>
+    /* Réinitialisation */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    :root {
+      --eve-primary: #1b1b1b;
+      --eve-secondary: #252525;
+      --eve-accent: #00b4ff;
+      --eve-text: #ffffff;
+    }
+    body {
+      background: black;
+      color: var(--eve-text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      height: 100vh;
+      margin: 0;
+      padding: 20px;
+      /* Zone de drag pour la fenêtre */
+      -webkit-app-region: drag;
+      display: flex;
+      justify-content: center;
+    }
+    .app-container {
+      width: 400px;
+      background-color: var(--eve-primary);
+      border-radius: 8px;
+      border: 1px solid var(--eve-accent);
+      overflow: hidden;
+    }
+    .header {
+      background-color: var(--eve-secondary);
+      padding: 15px;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid var(--eve-accent);
+      position: relative;
+    }
+    .logo {
+      width: 24px;
+      height: 24px;
+      background: black;
+      border-radius: 50%;
+      border: 2px solid #4a4a4a;
+      position: relative;
+      margin-right: 10px;
+    }
+    .logo::after {
+      content: '';
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 6px;
+      height: 6px;
+      background: var(--eve-accent);
+      border-radius: 50%;
+    }
+    .title {
+      color: var(--eve-text);
+      font-size: 18px;
+      font-weight: 500;
+    }
+    .close-button {
+      position: absolute;
+      right: 15px;
+      color: var(--eve-accent);
+      cursor: pointer;
+      -webkit-app-region: no-drag;
+    }
+    .channels {
+      padding: 15px;
+      max-height: calc(100vh - 100px);
+      overflow-y: auto;
+      -webkit-app-region: no-drag;
+    }
+    .category {
+      margin-bottom: 15px;
+    }
+    .category-title {
+      color: var(--eve-accent);
+      font-size: 12px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      padding-left: 5px;
+    }
+    .channel {
+      background-color: var(--eve-secondary);
+      margin-bottom: 5px;
+      border-radius: 4px;
+      cursor: pointer;
+      -webkit-app-region: no-drag;
+      transition: all 0.2s ease;
+      border: 1px solid transparent;
+      padding: 15px;
+    }
+    .channel:hover {
+      border-color: var(--eve-accent);
+      transform: translateX(5px);
+    }
+    .channels::-webkit-scrollbar {
+      width: 8px;
+      -webkit-app-region: no-drag;
+    }
+    .channels::-webkit-scrollbar-track {
+      background: var(--eve-primary);
+    }
+    .channels::-webkit-scrollbar-thumb {
+      background: var(--eve-accent);
+      border-radius: 4px;
+      -webkit-app-region: no-drag;
+    }
+    .channels::-webkit-scrollbar-thumb:hover {
+      background: #0095d8;
+    }
+  </style>
+</head>
+<body>
+<div class="app-container">
+  <div class="header">
+    <div class="logo"></div>
+    <div class="title">The Initiative Comms</div>
+    <!-- Vous pouvez utiliser appWindow.close() de l'API Tauri pour fermer la fenêtre -->
+    <div class="close-button" onclick="window.close()">✕</div>
+  </div>
+  <div class="channels">
+    <div class="category">
+      <div class="category-title">Support</div>
+      <div class="channel" data-url="mumble://mumble.sh1t.space/Fleet%20Help?title=Root&version=1.2.0">
+        Fleet Help
+      </div>
+    </div>
+
+    <div class="category">
+      <div class="category-title">Fleet Operations</div>
+      <div class="channel" data-url="mumble://mumble.sh1t.space/Fleet%20Operations/Fleet%20Main/Fleet%20Sec%20Purple%20I%20Main?title=Root&version=1.2.0">
+        Fleet Sec Purple I
+      </div>
+      <div class="channel" data-url="mumble://mumble.sh1t.space/Fleet%20Operations/Fleet%20Main/Fleet%20Sec%20Purple%20II%20Main?title=Root&version=1.2.0">
+        Fleet Sec Purple II
+      </div>
+      <div class="channel" data-url="mumble://mumble.sh1t.space/Fleet%20Operations/Fleet%20Main/Fleet%20Sec%20Purple%20III%20Main?title=Root&version=1.2.0">
+        Fleet Sec Purple III
+      </div>
+      <div class="channel" data-url="mumble://mumble.sh1t.space/Fleet%20Operations/Fleet%20Main/Fleet%20Sec%20Purple%20IV%20Main?title=Root&version=1.2.0">
+        Fleet Sec Purple IV
+      </div>
+      <div class="channel" data-url="mumble://mumble.sh1t.space/Fleet%20Operations/Fleet%20Main/Fleet%20Sec%20Purple%20V%20Main?title=Root&version=1.2.0">
+        Fleet Sec Purple V
+      </div>
+      <div class="channel" data-url="mumble://mumble.sh1t.space/Fleet%20Operations/Fleet%20Main/Fleet%20Sec%20Purple%20VI%20Main?title=Root&version=1.2.0">
+        Fleet Sec Purple VI
+      </div>
+      <div class="channel" data-url="mumble://mumble.sh1t.space/Fleet%20Operations/Fleet%20Main/Fleet%20Astartes%20Main?title=Root&version=1.2.0">
+        Fleet Astartes
+      </div>
+    </div>
+
+    <div class="category">
+      <div class="category-title">Standing Fleet</div>
+      <div class="channel" data-url="mumble://mumble.sh1t.space/Fleet%20Operations/Standing%20Fleet%20Area/Elite%20-%20Small%20Gangers?title=Root&version=1.2.0">
+        Elite - Small Gangers
+      </div>
+    </div>
+
+    <div class="category">
+      <div class="category-title">Signature Groups</div>
+      <div class="channel" data-url="mumble://mumble.sh1t.space/Signature%20Groups/Home%20Defense%20BLOPs?title=Root&version=1.2.0">
+        Home Defense BLOPs
+      </div>
+      <div class="channel" data-url="mumble://mumble.sh1t.space/Signature%20Groups/Nightstalkers?title=Root&version=1.2.0">
+        Nightstalkers
+      </div>
+    </div>
+
+    <div class="category">
+      <div class="category-title">Corporation</div>
+      <div class="channel" data-url="mumble://mumble.sh1t.space/Corporation%20Zone/Goat%20to%20go%20[G%20OAT]?title=Root&version=1.2.0">
+        Goat to go [G OAT]
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="module">
+  import { invoke } from '@tauri-apps/api/core';
+  console.log("invoke:", invoke);
+
+  function openMumbleLink(link) {
+    console.log("Tentative d'ouverture du lien:", link);
+    invoke("open_link", { link })
+      .then(() => console.log("Lien ouvert avec succès"))
+      .catch((err) => console.error("Erreur lors de l'ouverture du lien:", err));
+  }
+
+  document.querySelectorAll('.channel').forEach((el) => {
+    el.addEventListener('click', () => {
+      const url = el.getAttribute('data-url');
+      console.log("Channel cliqué, URL:", url);
+      openMumbleLink(url);
+    });
+  });
+
+  window.openMumbleLink = openMumbleLink;
+</script>
+
+
+</body>
+</html>
