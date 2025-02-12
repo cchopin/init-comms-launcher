@@ -21,3 +21,4 @@ Thumbs.db
 
 # Environment files (si vous ne souhaitez pas les partager)
 .env
+src-tauri/Cargo.toml
