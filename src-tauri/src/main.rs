@@ -4,6 +4,7 @@
 )]
 
 use std::process::Command;
+use tauri::Window;
 
 #[tauri::command]
 fn open_link(link: &str) -> Result<(), String> {
@@ -47,9 +48,14 @@ fn open_link(link: &str) -> Result<(), String> {
   Ok(())
 }
 
+#[tauri::command]
+fn close_app(window: Window) {
+  window.close().unwrap();
+}
+
 fn main() {
   tauri::Builder::default()
-    .invoke_handler(tauri::generate_handler![open_link])
+    .invoke_handler(tauri::generate_handler![open_link, close_app])
     .run(tauri::generate_context!())
     .expect("error while running tauri application");
 }
