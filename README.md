@@ -2,6 +2,8 @@
 
 **init-comms-launcher** is a desktop application built with [Tauri](https://tauri.app/). It displays a custom HTML/CSS interface for managing and launching external links (for example, Mumble links). This repository contains the complete source code and configuration for building, packaging, and deploying the application on macOS.
 
+![img_1.png](img_1.png)
+
 ---
 
 ## Table of Contents
