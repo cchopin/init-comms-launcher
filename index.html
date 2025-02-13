@@ -17,6 +17,14 @@
       --eve-accent: #00b4ff;
       --eve-text: #ffffff;
     }
+
+    .channel.active
+      {
+      background-color: var(--eve-accent);
+      color: var(--eve-primary);
+      border-color: var(--eve-text);
+    }
+
     body {
       background: black;
       color: var(--eve-text);
@@ -201,6 +209,14 @@
 
   document.querySelectorAll('.channel').forEach((el) => {
     el.addEventListener('click', () => {
+      // Retirer la classe active de tous les canaux
+      document.querySelectorAll('.channel.active').forEach((activeEl) => {
+        activeEl.classList.remove('active');
+      });
+      // Ajouter la classe active au canal cliqué
+      el.classList.add('active');
+
+      // Récupérer l'URL et ouvrir le lien via Tauri
       const url = el.getAttribute('data-url');
       console.log("Channel cliqué, URL:", url);
       openMumbleLink(url);
