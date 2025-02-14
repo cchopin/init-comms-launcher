@@ -1,0 +1,77 @@
+{
+  "categories": [
+    {
+      "title": "Support",
+      "channels": [
+        {
+          "name": "Fleet Help",
+          "url": "mumble://mumble.sh1t.space/Fleet%20Help?title=Root&version=1.2.0"
+        }
+      ]
+    },
+    {
+      "title": "Fleet Operations",
+      "channels": [
+        {
+          "name": "Fleet Sec Purple I",
+          "url": "mumble://mumble.sh1t.space/Fleet%20Operations/Fleet%20Main/Fleet%20Sec%20Purple%20I%20Main?title=Root&version=1.2.0"
+        },
+        {
+          "name": "Fleet Sec Purple II",
+          "url": "mumble://mumble.sh1t.space/Fleet%20Operations/Fleet%20Main/Fleet%20Sec%20Purple%20II%20Main?title=Root&version=1.2.0"
+        },
+        {
+          "name": "Fleet Sec Purple III",
+          "url": "mumble://mumble.sh1t.space/Fleet%20Operations/Fleet%20Main/Fleet%20Sec%20Purple%20III%20Main?title=Root&version=1.2.0"
+        },
+        {
+          "name": "Fleet Sec Purple IV",
+          "url": "mumble://mumble.sh1t.space/Fleet%20Operations/Fleet%20Main/Fleet%20Sec%20Purple%20IV%20Main?title=Root&version=1.2.0"
+        },
+        {
+          "name": "Fleet Sec Purple V",
+          "url": "mumble://mumble.sh1t.space/Fleet%20Operations/Fleet%20Main/Fleet%20Sec%20Purple%20V%20Main?title=Root&version=1.2.0"
+        },
+        {
+          "name": "Fleet Sec Purple VI",
+          "url": "mumble://mumble.sh1t.space/Fleet%20Operations/Fleet%20Main/Fleet%20Sec%20Purple%20VI%20Main?title=Root&version=1.2.0"
+        },
+        {
+          "name": "Fleet Astartes",
+          "url": "mumble://mumble.sh1t.space/Fleet%20Operations/Fleet%20Main/Fleet%20Astartes%20Main?title=Root&version=1.2.0"
+        }
+      ]
+    },
+    {
+      "title": "Standing Fleet",
+      "channels": [
+        {
+          "name": "Elite - Small Gangers",
+          "url": "mumble://mumble.sh1t.space/Fleet%20Operations/Standing%20Fleet%20Area/Elite%20-%20Small%20Gangers?title=Root&version=1.2.0"
+        }
+      ]
+    },
+    {
+      "title": "Signature Groups",
+      "channels": [
+        {
+          "name": "Home Defense BLOPs",
+          "url": "mumble://mumble.sh1t.space/Signature%20Groups/Home%20Defense%20BLOPs?title=Root&version=1.2.0"
+        },
+        {
+          "name": "Nightstalkers",
+          "url": "mumble://mumble.sh1t.space/Signature%20Groups/Nightstalkers?title=Root&version=1.2.0"
+        }
+      ]
+    },
+    {
+      "title": "Corporation",
+      "channels": [
+        {
+          "name": "Goat to go [G OAT]",
+          "url": "mumble://mumble.sh1t.space/Corporation%20Zone/Goat%20to%20go%20[G%20OAT]?title=Root&version=1.2.0"
+        }
+      ]
+    }
+  ]
+}
