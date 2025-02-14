@@ -100,13 +100,12 @@
   import { resolveResource } from '@tauri-apps/api/path';
   import { readTextFile } from '@tauri-apps/plugin-fs';
 
-  console.log("invoke:", invoke);
-
   document.addEventListener("DOMContentLoaded", async function () {
     try {
       const resourcePath = await resolveResource('channels.json');
       const data = JSON.parse(await readTextFile(resourcePath));
       const channelsContainer = document.querySelector(".channels");
+
       data.categories.forEach(category => {
         const categoryDiv = document.createElement("div");
         categoryDiv.classList.add("category");
@@ -121,7 +120,22 @@
           channelDiv.classList.add("channel");
           channelDiv.setAttribute("data-url", channel.url);
           channelDiv.textContent = channel.name;
-          channelDiv.addEventListener("click", () => openMumbleLink(channel.url));
+
+          // Ajout de l'écouteur de clic
+          channelDiv.addEventListener("click", function() {
+            // Retirer la classe active de tous les canaux
+            document.querySelectorAll('.channel.active').forEach((activeEl) => {
+              activeEl.classList.remove('active');
+            });
+            // Ajouter la classe active au canal cliqué
+            this.classList.add('active');
+
+            // Ouvrir le lien via Tauri
+            const url = this.getAttribute('data-url');
+            console.log("Channel cliqué, URL:", url);
+            openMumbleLink(url);
+          });
+
           categoryDiv.appendChild(channelDiv);
         });
         channelsContainer.appendChild(categoryDiv);
@@ -138,22 +152,7 @@
       .catch((err) => console.error("Erreur lors de l'ouverture du lien:", err));
   }
 
-  document.querySelectorAll('.channel').forEach((el) => {
-    el.addEventListener('click', () => {
-      // Retirer la classe active de tous les canaux
-      document.querySelectorAll('.channel.active').forEach((activeEl) => {
-        activeEl.classList.remove('active');
-      });
-      // Ajouter la classe active au canal cliqué
-      el.classList.add('active');
-
-      // Récupérer l'URL et ouvrir le lien via Tauri
-      const url = el.getAttribute('data-url');
-      console.log("Channel cliqué, URL:", url);
-      openMumbleLink(url);
-    });
-  });
-
+  // On expose la fonction si besoin (ex: pour l'utiliser ailleurs)
   window.openMumbleLink = openMumbleLink;
 </script>
 

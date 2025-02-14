@@ -72,6 +72,15 @@
           "url": "mumble://mumble.sh1t.space/Corporation%20Zone/Goat%20to%20go%20[G%20OAT]?title=Root&version=1.2.0"
         }
       ]
+    },
+    {
+      "title": "Root",
+      "channels": [
+        {
+          "name": "AFK",
+          "url": "mumble://mumble.sh1t.space/AFK?title=Root&version=1.2.0"
+        }
+      ]
     }
   ]
 }

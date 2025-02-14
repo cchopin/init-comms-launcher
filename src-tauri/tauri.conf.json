@@ -15,7 +15,7 @@
       {
         "title": "init-comms-launcher",
         "width": 300,
-        "height": 900,
+        "height": 970,
         "transparent": true,
         "decorations": true,
         "maximizable": false,
